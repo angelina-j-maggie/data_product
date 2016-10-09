@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Building a data product</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Building a data product">
+  <meta name="author" content="angelina.j.maggie">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Building a data product</h1>
+    <h2>How likely are you to offend?</h2>
+    <p>angelina.j.maggie<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>How likely are you to offend?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>In order to assess this question, the Proven Reoffending Statistics, which was released in July 2016 by the Ministry of Justice, GB. The data set used was the CSV format of data tools, found at this link:</p>
+
+<p><a href="https://www.gov.uk/government/statistics/proven-reoffending-statistics-october-2013-to-september-2014">https://www.gov.uk/government/statistics/proven-reoffending-statistics-october-2013-to-september-2014</a></p>
+
+<p>The dataset contains a breakdown of the offending and reoffending data in the period October 2013 to September 2014 by the following characteristics:</p>
+
+<ol>
+<li>Age</li>
+<li>Area</li>
+<li>Gender</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>How likely are you to offend?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The dataset was cleaned to contain only the breakdown by area, age and gender.</p>
+
+<p>Then the population of each area of England and Wales in 2014 was obtained from the Office for National Statistics (ONS) Annual Mid-year Population Estimates. These can be found at the following link:</p>
+
+<p><a href="http://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/bulletins/annualmidyearpopulationestimates/2015-06-25">http://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/bulletins/annualmidyearpopulationestimates/2015-06-25</a></p>
+
+<!-- html table generated in R 3.3.1 by xtable 1.8-2 package -->
+
+<!-- Sun Oct  9 11:00:25 2016 -->
+
+<table border=1>
+<tr> <th>  </th> <th> Region </th> <th> Population Estimate </th>  </tr>
+  <tr> <td align="right"> 1 </td> <td> North East </td> <td> 8,100,00 </td> </tr>
+  <tr> <td align="right"> 2 </td> <td> North West </td> <td> 7,800,000 </td> </tr>
+  <tr> <td align="right"> 3 </td> <td> South East </td> <td> 18,700,000 </td> </tr>
+  <tr> <td align="right"> 4 </td> <td> South West </td> <td> 14,500,000 </td> </tr>
+  <tr> <td align="right"> 5 </td> <td> London </td> <td> 9,100,000 </td> </tr>
+   </table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>How likely are you to offend?</h2>
+  </hgroup>
+  <article data-timings="">
+    <h1>The user can then input their Gender, Age and Area of choice.</h1>
+
+<p>Imagine you are a female from London, with the age range 18 to 20. You would input those details in the left hand panel and then press submit to get the likelihood of you offending.</p>
+
+<p><img src="rshiny_tool.png" alt="width"></p>
+
+<p>In the background, the proportion of offenders in these sub-categories is calculated and the number of offenders in 1,000 is provided, after pressing &quot;Submit&quot;.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>How likely are you to offend?</h2>
+  </hgroup>
+  <article data-timings="">
+    <h1>Output of the product</h1>
+
+<p>The output given is the number of offenders in 1,000 individuals who all have the same age, gender and area as the submitted entries. Further, the risk of reoffence is provided too.</p>
+
+<p>Two plots are given that show the breakdown offences committed by offence category in the age, gender and area categories and the number of previous offences commited by the same individuals.</p>
+
+<p><img src="assets/fig/unnamed-chunk-2-1.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='How likely are you to offend?'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='How likely are you to offend?'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='How likely are you to offend?'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='How likely are you to offend?'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
